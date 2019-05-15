@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TemplateApp.Data.Models\TemplateApp.Data.Models.csproj" />
+    <ProjectReference Include="..\TemplateApp.Data\TemplateApp.Data.csproj" />
+  </ItemGroup>
+
+</Project>
