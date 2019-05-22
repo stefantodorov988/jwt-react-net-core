@@ -39,5 +39,14 @@ namespace TemplateApp.API.Controllers
 
             return Ok(user);
         }
+
+        //[AllowAnonymous]
+        [HttpPost("register")]
+        public IActionResult Register([FromBody]User userParam)
+        {
+            _userService.Register(userParam);
+
+            return Ok();
+        }
     }
 }

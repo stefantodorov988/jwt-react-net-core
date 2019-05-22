@@ -12,7 +12,6 @@ export const authenticationService = {
 function login(username, password) {
     return window.api.post("/users/authenticate", { username: username, password: password })
         .then(user => {
-            debugger;
             // store user details and jwt token in local storage to keep user logged in between page refreshes
             if(user.token){
                 localStorage.setItem('currentUser', JSON.stringify(user));
@@ -21,7 +20,6 @@ function login(username, password) {
             return user;
 
         }).catch(err =>{
-            debugger;
             localStorage.clear()
         });
 }

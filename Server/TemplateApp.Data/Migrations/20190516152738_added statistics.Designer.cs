@@ -10,8 +10,8 @@ using TemplateApp.Data;
 namespace TemplateApp.Data.Migrations
 {
     [DbContext(typeof(TemplateAppDbContext))]
-    [Migration("20190513114353_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20190516152738_added statistics")]
+    partial class addedstatistics
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -21,7 +21,7 @@ namespace TemplateApp.Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("TemplateApp.Data.Models.Blog", b =>
+            modelBuilder.Entity("TemplateApp.Data.Models.IpAdress", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -29,11 +29,28 @@ namespace TemplateApp.Data.Migrations
 
                     b.Property<DateTime>("CreatedAt");
 
-                    b.Property<string>("Url");
+                    b.Property<string>("Value");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Blogs");
+                    b.ToTable("IpAdresses");
+                });
+
+            modelBuilder.Entity("TemplateApp.Data.Models.PageStatistics", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CreatedAt");
+
+                    b.Property<int>("UniqueVisits");
+
+                    b.Property<int>("Visits");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("PageStatistics");
                 });
 
             modelBuilder.Entity("TemplateApp.Data.Models.Post", b =>
@@ -42,27 +59,40 @@ namespace TemplateApp.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("BlogId");
-
-                    b.Property<string>("Content");
-
                     b.Property<DateTime>("CreatedAt");
+
+                    b.Property<string>("ImageLink");
 
                     b.Property<string>("Title");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("BlogId");
-
                     b.ToTable("Posts");
                 });
 
-            modelBuilder.Entity("TemplateApp.Data.Models.Post", b =>
+            modelBuilder.Entity("TemplateApp.Data.Models.User", b =>
                 {
-                    b.HasOne("TemplateApp.Data.Models.Blog", "Blog")
-                        .WithMany("Posts")
-                        .HasForeignKey("BlogId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CreatedAt");
+
+                    b.Property<string>("Email");
+
+                    b.Property<string>("FirstName");
+
+                    b.Property<string>("LastName");
+
+                    b.Property<string>("Password");
+
+                    b.Property<string>("Token");
+
+                    b.Property<string>("Username");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Users");
                 });
 #pragma warning restore 612, 618
         }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
+using System.Security.Cryptography;
 using System.Text;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
@@ -15,7 +16,7 @@ namespace TemplateApp.Services
 {
     public class UserService : IUserService
     {
-
+        private readonly HashAlgorithm algorithm;
         private readonly AppSettings _appSettings;
         private readonly IRepository<User> userRepository;
 
@@ -23,19 +24,14 @@ namespace TemplateApp.Services
         {
             _appSettings = appSettings.Value;
             this.userRepository = userRepository;
+            algorithm = SHA256.Create();
         }
 
         public User Authenticate(string username, string password)
         {
-            //var user = this.userRepository.GetById(1);
-
-            var user = new User()
-            {
-                FirstName = "Test",
-                LastName = "Test",
-                Id = 1,
-                Username = "pecata"
-            };
+            string passwordHash = Encoding.Default.GetString(algorithm.ComputeHash(Encoding.UTF8.GetBytes(password)));
+            Func<User, bool> filter = x => x.Password == passwordHash && x.Username == username;
+            var user = this.userRepository.Filter(filter).ToList().FirstOrDefault();
 
             // return null if user not found
             if (user == null)
@@ -66,6 +62,23 @@ namespace TemplateApp.Services
         public IEnumerable<User> GetAll()
         {
             return this.userRepository.Filter().ToList();
+        }
+
+        public void Register(User user)
+        {
+            var bytearr = algorithm.ComputeHash(Encoding.UTF8.GetBytes(user.Password));
+            var passwordHash = Encoding.Default.GetString(bytearr);
+
+
+            Func<User, bool> uniqueValidation = x => x.Username == user.Username || x.Email == user.Email;
+            if (userRepository.Filter(uniqueValidation).Any())
+            {
+               throw new ArgumentException("Email or username already taken");
+            }
+
+            user.Password = passwordHash;
+            userRepository.Create(user);
+            userRepository.SaveChanges();
         }
     }
 }

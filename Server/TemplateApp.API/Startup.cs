@@ -32,7 +32,7 @@ namespace TemplateApp.API
             services.AddCors();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
 
-            var connection = @"Server=BG2-4214-PC\SQLEXPRESS;Database=TemplateAppDB;Trusted_Connection=True;ConnectRetryCount=0";
+            var connection = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<TemplateAppDbContext>
                 (options => options.UseSqlServer(connection));
 
@@ -62,11 +62,16 @@ namespace TemplateApp.API
                 };
             });
 
-            services.AddScoped<IRepository<Blog>, Repository<Blog>>();
+
             services.AddScoped<IRepository<Post>, Repository<Post>>();
             services.AddScoped<IRepository<User>, Repository<User>>();
+            services.AddScoped<IRepository<PageStatistics>, Repository<PageStatistics>>();
+            services.AddScoped<IRepository<IpAdress>, Repository<IpAdress>>();
+            services.AddScoped<IRepository<UniqueClick>, Repository<UniqueClick>>();
 
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IPostService, PostService>();
+            services.AddScoped<IStatisticsService, StatisticsService>();
 
         }
 

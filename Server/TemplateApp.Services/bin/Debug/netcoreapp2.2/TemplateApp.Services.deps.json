@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "8477fbd16a16f7f8afcbc6a251b44c3a2bef209c"
+    "signature": "adb895a8ae10cbb50fbd5578518a184ab4d0a7cf"
   },
   "compilationOptions": {},
   "targets": {
@@ -9,9 +9,9 @@
       "TemplateApp.Services/1.0.0": {
         "dependencies": {
           "Microsoft.IdentityModel.Tokens": "5.4.0",
+          "System.IdentityModel.Tokens.Jwt": "5.4.0",
           "TemplateApp.Data.Models": "1.0.0",
-          "TemplateApp.Repositories": "1.0.0",
-          "System.IdentityModel.Tokens.Jwt": "5.3.0.0"
+          "TemplateApp.Repositories": "1.0.0"
         },
         "runtime": {
           "TemplateApp.Services.dll": {}
@@ -209,6 +209,18 @@
           "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll": {
             "assemblyVersion": "2.2.0.0",
             "fileVersion": "2.2.0.18315"
+          }
+        }
+      },
+      "Microsoft.IdentityModel.JsonWebTokens/5.4.0": {
+        "dependencies": {
+          "Microsoft.IdentityModel.Tokens": "5.4.0",
+          "Newtonsoft.Json": "10.0.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll": {
+            "assemblyVersion": "5.4.0.0",
+            "fileVersion": "5.4.0.60123"
           }
         }
       },
@@ -629,6 +641,19 @@
           "runtime/win/lib/_._": {
             "rid": "win",
             "assetType": "runtime"
+          }
+        }
+      },
+      "System.IdentityModel.Tokens.Jwt/5.4.0": {
+        "dependencies": {
+          "Microsoft.IdentityModel.JsonWebTokens": "5.4.0",
+          "Microsoft.IdentityModel.Tokens": "5.4.0",
+          "Newtonsoft.Json": "10.0.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.dll": {
+            "assemblyVersion": "5.4.0.0",
+            "fileVersion": "5.4.0.60123"
           }
         }
       },
@@ -1242,14 +1267,6 @@
         "runtime": {
           "TemplateApp.Repositories.dll": {}
         }
-      },
-      "System.IdentityModel.Tokens.Jwt/5.3.0.0": {
-        "runtime": {
-          "System.IdentityModel.Tokens.Jwt.dll": {
-            "assemblyVersion": "5.3.0.0",
-            "fileVersion": "5.3.0.51005"
-          }
-        }
       }
     }
   },
@@ -1377,6 +1394,13 @@
       "sha512": "sha512-Sv8EDHvN2852bE5G1yosKCa7sUw/x0Z/rCaI5LIWHseAXprG1h9oberAh3NRBO7w2zTZq79WPeQDMsPBVSf99w==",
       "path": "microsoft.extensions.primitives/2.2.0",
       "hashPath": "microsoft.extensions.primitives.2.2.0.nupkg.sha512"
+    },
+    "Microsoft.IdentityModel.JsonWebTokens/5.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CDIV/v6s7ZbNjk2Z9rgUP0TToBsIIbTauyosShTRzKRthNpyk6uWzlPQA9/gPXhYERugfhp/w75phDqpH093Pw==",
+      "path": "microsoft.identitymodel.jsonwebtokens/5.4.0",
+      "hashPath": "microsoft.identitymodel.jsonwebtokens.5.4.0.nupkg.sha512"
     },
     "Microsoft.IdentityModel.Logging/5.4.0": {
       "type": "package",
@@ -1671,6 +1695,13 @@
       "sha512": "sha512-FhKmdR6MPG+pxow6wGtNAWdZh7noIOpdD5TwQ3CprzgIE1bBBoim0vbR1+AWsWjQmU7zXHgQo4TWSP6lCeiWcQ==",
       "path": "system.globalization.extensions/4.3.0",
       "hashPath": "system.globalization.extensions.4.3.0.nupkg.sha512"
+    },
+    "System.IdentityModel.Tokens.Jwt/5.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3iSL/4C+K4d9k700URwCoAEXFesI1Ho0DP/QSr9nmzJZY69oi48qYlglXbl2zz3lB+XfgPiuYoSJ6qIdYBPFzQ==",
+      "path": "system.identitymodel.tokens.jwt/5.4.0",
+      "hashPath": "system.identitymodel.tokens.jwt.5.4.0.nupkg.sha512"
     },
     "System.Interactive.Async/3.2.0": {
       "type": "package",
@@ -2034,11 +2065,6 @@
     },
     "TemplateApp.Repositories/1.0.0": {
       "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "System.IdentityModel.Tokens.Jwt/5.3.0.0": {
-      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }

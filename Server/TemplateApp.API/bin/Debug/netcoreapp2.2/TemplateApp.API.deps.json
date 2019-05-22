@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.2",
-    "signature": "2a43fd7d7503b47fa2cf00eefc9b2e56d4bac42a"
+    "signature": "39eee287e9780314263689b539c93f070b9f8df0"
   },
   "compilationOptions": {
     "defines": [
@@ -100,6 +100,21 @@
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.EntityFrameworkCore.SqlServer.dll": {}
+        }
+      },
+      "Microsoft.IdentityModel.JsonWebTokens/5.4.0": {
+        "dependencies": {
+          "Microsoft.IdentityModel.Tokens": "5.4.0",
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll": {
+            "assemblyVersion": "5.4.0.0",
+            "fileVersion": "5.4.0.60123"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll": {}
         }
       },
       "Microsoft.IdentityModel.Logging/5.4.0": {
@@ -343,6 +358,22 @@
         }
       },
       "System.Collections.Immutable/1.5.0": {},
+      "System.IdentityModel.Tokens.Jwt/5.4.0": {
+        "dependencies": {
+          "Microsoft.IdentityModel.JsonWebTokens": "5.4.0",
+          "Microsoft.IdentityModel.Tokens": "5.4.0",
+          "Newtonsoft.Json": "11.0.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.dll": {
+            "assemblyVersion": "5.4.0.0",
+            "fileVersion": "5.4.0.60123"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.dll": {}
+        }
+      },
       "System.Interactive.Async/3.2.0": {
         "runtime": {
           "lib/netstandard2.0/System.Interactive.Async.dll": {
@@ -505,6 +536,7 @@
       "TemplateApp.Services/1.0.0": {
         "dependencies": {
           "Microsoft.IdentityModel.Tokens": "5.4.0",
+          "System.IdentityModel.Tokens.Jwt": "5.4.0",
           "TemplateApp.Data.Models": "1.0.0",
           "TemplateApp.Repositories": "1.0.0"
         },
@@ -835,7 +867,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.Authentication": "2.2.0",
           "Microsoft.IdentityModel.Protocols.WsFederation": "5.3.0",
-          "System.IdentityModel.Tokens.Jwt": "5.3.0"
+          "System.IdentityModel.Tokens.Jwt": "5.4.0"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.AspNetCore.Authentication.WsFederation.dll": {}
@@ -2315,16 +2347,6 @@
         },
         "compileOnly": true
       },
-      "Microsoft.IdentityModel.JsonWebTokens/5.3.0": {
-        "dependencies": {
-          "Microsoft.IdentityModel.Tokens": "5.4.0",
-          "Newtonsoft.Json": "11.0.2"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll": {}
-        },
-        "compileOnly": true
-      },
       "Microsoft.IdentityModel.Protocols/5.3.0": {
         "dependencies": {
           "Microsoft.IdentityModel.Logging": "5.4.0",
@@ -2343,7 +2365,7 @@
           "Microsoft.IdentityModel.Protocols": "5.3.0",
           "Newtonsoft.Json": "11.0.2",
           "System.Dynamic.Runtime": "4.3.0",
-          "System.IdentityModel.Tokens.Jwt": "5.3.0"
+          "System.IdentityModel.Tokens.Jwt": "5.4.0"
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll": {}
@@ -2689,17 +2711,6 @@
           "System.Runtime": "4.3.0",
           "System.Runtime.Extensions": "4.3.0",
           "System.Runtime.InteropServices": "4.3.0"
-        },
-        "compileOnly": true
-      },
-      "System.IdentityModel.Tokens.Jwt/5.3.0": {
-        "dependencies": {
-          "Microsoft.IdentityModel.JsonWebTokens": "5.3.0",
-          "Microsoft.IdentityModel.Tokens": "5.4.0",
-          "Newtonsoft.Json": "11.0.2"
-        },
-        "compile": {
-          "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.dll": {}
         },
         "compileOnly": true
       },
@@ -3349,6 +3360,13 @@
       "path": "microsoft.entityframeworkcore.sqlserver/2.2.4",
       "hashPath": "microsoft.entityframeworkcore.sqlserver.2.2.4.nupkg.sha512"
     },
+    "Microsoft.IdentityModel.JsonWebTokens/5.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-CDIV/v6s7ZbNjk2Z9rgUP0TToBsIIbTauyosShTRzKRthNpyk6uWzlPQA9/gPXhYERugfhp/w75phDqpH093Pw==",
+      "path": "microsoft.identitymodel.jsonwebtokens/5.4.0",
+      "hashPath": "microsoft.identitymodel.jsonwebtokens.5.4.0.nupkg.sha512"
+    },
     "Microsoft.IdentityModel.Logging/5.4.0": {
       "type": "package",
       "serviceable": true,
@@ -3425,6 +3443,13 @@
       "sha512": "sha512-EXKiDFsChZW0RjrZ4FYHu9aW6+P4MCgEDCklsVseRfhoO0F+dXeMSsMRAlVXIo06kGJ/zv+2w1a2uc2+kxxSaQ==",
       "path": "system.collections.immutable/1.5.0",
       "hashPath": "system.collections.immutable.1.5.0.nupkg.sha512"
+    },
+    "System.IdentityModel.Tokens.Jwt/5.4.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3iSL/4C+K4d9k700URwCoAEXFesI1Ho0DP/QSr9nmzJZY69oi48qYlglXbl2zz3lB+XfgPiuYoSJ6qIdYBPFzQ==",
+      "path": "system.identitymodel.tokens.jwt/5.4.0",
+      "hashPath": "system.identitymodel.tokens.jwt.5.4.0.nupkg.sha512"
     },
     "System.Interactive.Async/3.2.0": {
       "type": "package",
@@ -4559,13 +4584,6 @@
       "path": "microsoft.extensions.webencoders/2.2.0",
       "hashPath": "microsoft.extensions.webencoders.2.2.0.nupkg.sha512"
     },
-    "Microsoft.IdentityModel.JsonWebTokens/5.3.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-GmiwCJPEe+V8+2GO3kD8K0IeqNHlTL0xZcHePIjyJveRn7OderxdT32aCZeJZEvz5w2Jlyag3zdyu1zkdTJo2A==",
-      "path": "microsoft.identitymodel.jsonwebtokens/5.3.0",
-      "hashPath": "microsoft.identitymodel.jsonwebtokens.5.3.0.nupkg.sha512"
-    },
     "Microsoft.IdentityModel.Protocols/5.3.0": {
       "type": "package",
       "serviceable": true,
@@ -4908,13 +4926,6 @@
       "sha512": "sha512-FhKmdR6MPG+pxow6wGtNAWdZh7noIOpdD5TwQ3CprzgIE1bBBoim0vbR1+AWsWjQmU7zXHgQo4TWSP6lCeiWcQ==",
       "path": "system.globalization.extensions/4.3.0",
       "hashPath": "system.globalization.extensions.4.3.0.nupkg.sha512"
-    },
-    "System.IdentityModel.Tokens.Jwt/5.3.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-PZT7Vf5b3jlwFgQnTV93tKeoLQj/Qfo/tKWHZXCprUj2ZNeyPxp47IhwCqqFcuAtuTX5FOk3dRHk8gC+KjpmGA==",
-      "path": "system.identitymodel.tokens.jwt/5.3.0",
-      "hashPath": "system.identitymodel.tokens.jwt.5.3.0.nupkg.sha512"
     },
     "System.IO/4.3.0": {
       "type": "package",

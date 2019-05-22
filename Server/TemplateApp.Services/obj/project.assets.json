@@ -221,6 +221,19 @@
           "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll": {}
         }
       },
+      "Microsoft.IdentityModel.JsonWebTokens/5.4.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.IdentityModel.Tokens": "5.4.0",
+          "Newtonsoft.Json": "10.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll": {}
+        }
+      },
       "Microsoft.IdentityModel.Logging/5.4.0": {
         "type": "package",
         "dependencies": {
@@ -1017,6 +1030,20 @@
             "assetType": "runtime",
             "rid": "win"
           }
+        }
+      },
+      "System.IdentityModel.Tokens.Jwt/5.4.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.IdentityModel.JsonWebTokens": "5.4.0",
+          "Microsoft.IdentityModel.Tokens": "5.4.0",
+          "Newtonsoft.Json": "10.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.dll": {}
         }
       },
       "System.Interactive.Async/3.2.0": {
@@ -2231,6 +2258,32 @@
         "lib/netstandard2.0/Microsoft.Extensions.Primitives.xml",
         "microsoft.extensions.primitives.2.2.0.nupkg.sha512",
         "microsoft.extensions.primitives.nuspec"
+      ]
+    },
+    "Microsoft.IdentityModel.JsonWebTokens/5.4.0": {
+      "sha512": "CDIV/v6s7ZbNjk2Z9rgUP0TToBsIIbTauyosShTRzKRthNpyk6uWzlPQA9/gPXhYERugfhp/w75phDqpH093Pw==",
+      "type": "package",
+      "path": "microsoft.identitymodel.jsonwebtokens/5.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/Microsoft.IdentityModel.JsonWebTokens.dll",
+        "lib/net45/Microsoft.IdentityModel.JsonWebTokens.pdb",
+        "lib/net45/Microsoft.IdentityModel.JsonWebTokens.xml",
+        "lib/net451/Microsoft.IdentityModel.JsonWebTokens.dll",
+        "lib/net451/Microsoft.IdentityModel.JsonWebTokens.pdb",
+        "lib/net451/Microsoft.IdentityModel.JsonWebTokens.xml",
+        "lib/net461/Microsoft.IdentityModel.JsonWebTokens.dll",
+        "lib/net461/Microsoft.IdentityModel.JsonWebTokens.pdb",
+        "lib/net461/Microsoft.IdentityModel.JsonWebTokens.xml",
+        "lib/netstandard1.4/Microsoft.IdentityModel.JsonWebTokens.dll",
+        "lib/netstandard1.4/Microsoft.IdentityModel.JsonWebTokens.pdb",
+        "lib/netstandard1.4/Microsoft.IdentityModel.JsonWebTokens.xml",
+        "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.dll",
+        "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.pdb",
+        "lib/netstandard2.0/Microsoft.IdentityModel.JsonWebTokens.xml",
+        "microsoft.identitymodel.jsonwebtokens.5.4.0.nupkg.sha512",
+        "microsoft.identitymodel.jsonwebtokens.nuspec"
       ]
     },
     "Microsoft.IdentityModel.Logging/5.4.0": {
@@ -4098,6 +4151,32 @@
         "runtimes/win/lib/netstandard1.3/System.Globalization.Extensions.dll",
         "system.globalization.extensions.4.3.0.nupkg.sha512",
         "system.globalization.extensions.nuspec"
+      ]
+    },
+    "System.IdentityModel.Tokens.Jwt/5.4.0": {
+      "sha512": "3iSL/4C+K4d9k700URwCoAEXFesI1Ho0DP/QSr9nmzJZY69oi48qYlglXbl2zz3lB+XfgPiuYoSJ6qIdYBPFzQ==",
+      "type": "package",
+      "path": "system.identitymodel.tokens.jwt/5.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/System.IdentityModel.Tokens.Jwt.dll",
+        "lib/net45/System.IdentityModel.Tokens.Jwt.pdb",
+        "lib/net45/System.IdentityModel.Tokens.Jwt.xml",
+        "lib/net451/System.IdentityModel.Tokens.Jwt.dll",
+        "lib/net451/System.IdentityModel.Tokens.Jwt.pdb",
+        "lib/net451/System.IdentityModel.Tokens.Jwt.xml",
+        "lib/net461/System.IdentityModel.Tokens.Jwt.dll",
+        "lib/net461/System.IdentityModel.Tokens.Jwt.pdb",
+        "lib/net461/System.IdentityModel.Tokens.Jwt.xml",
+        "lib/netstandard1.4/System.IdentityModel.Tokens.Jwt.dll",
+        "lib/netstandard1.4/System.IdentityModel.Tokens.Jwt.pdb",
+        "lib/netstandard1.4/System.IdentityModel.Tokens.Jwt.xml",
+        "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.dll",
+        "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.pdb",
+        "lib/netstandard2.0/System.IdentityModel.Tokens.Jwt.xml",
+        "system.identitymodel.tokens.jwt.5.4.0.nupkg.sha512",
+        "system.identitymodel.tokens.jwt.nuspec"
       ]
     },
     "System.Interactive.Async/3.2.0": {
@@ -6738,6 +6817,7 @@
     ".NETCoreApp,Version=v2.2": [
       "Microsoft.IdentityModel.Tokens >= 5.4.0",
       "Microsoft.NETCore.App >= 2.2.0",
+      "System.IdentityModel.Tokens.Jwt >= 5.4.0",
       "TemplateApp.Data.Models >= 1.0.0",
       "TemplateApp.Repositories >= 1.0.0"
     ]
@@ -6749,11 +6829,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\stefan.t\\Desktop\\TemplateApp\\Server\\TemplateApp.Services\\TemplateApp.Services.csproj",
+      "projectUniqueName": "C:\\Users\\stefan.t\\Desktop\\test\\stefan.t\\Server\\TemplateApp.Services\\TemplateApp.Services.csproj",
       "projectName": "TemplateApp.Services",
-      "projectPath": "C:\\Users\\stefan.t\\Desktop\\TemplateApp\\Server\\TemplateApp.Services\\TemplateApp.Services.csproj",
+      "projectPath": "C:\\Users\\stefan.t\\Desktop\\test\\stefan.t\\Server\\TemplateApp.Services\\TemplateApp.Services.csproj",
       "packagesPath": "C:\\Users\\stefan.t\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\stefan.t\\Desktop\\TemplateApp\\Server\\TemplateApp.Services\\obj\\",
+      "outputPath": "C:\\Users\\stefan.t\\Desktop\\test\\stefan.t\\Server\\TemplateApp.Services\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -6772,11 +6852,11 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "C:\\Users\\stefan.t\\Desktop\\TemplateApp\\Server\\TemplateApp.Data.Models\\TemplateApp.Data.Models.csproj": {
-              "projectPath": "C:\\Users\\stefan.t\\Desktop\\TemplateApp\\Server\\TemplateApp.Data.Models\\TemplateApp.Data.Models.csproj"
+            "C:\\Users\\stefan.t\\Desktop\\test\\stefan.t\\Server\\TemplateApp.Data.Models\\TemplateApp.Data.Models.csproj": {
+              "projectPath": "C:\\Users\\stefan.t\\Desktop\\test\\stefan.t\\Server\\TemplateApp.Data.Models\\TemplateApp.Data.Models.csproj"
             },
-            "C:\\Users\\stefan.t\\Desktop\\TemplateApp\\Server\\TemplateApp.Repositories\\TemplateApp.Repositories.csproj": {
-              "projectPath": "C:\\Users\\stefan.t\\Desktop\\TemplateApp\\Server\\TemplateApp.Repositories\\TemplateApp.Repositories.csproj"
+            "C:\\Users\\stefan.t\\Desktop\\test\\stefan.t\\Server\\TemplateApp.Repositories\\TemplateApp.Repositories.csproj": {
+              "projectPath": "C:\\Users\\stefan.t\\Desktop\\test\\stefan.t\\Server\\TemplateApp.Repositories\\TemplateApp.Repositories.csproj"
             }
           }
         }
@@ -6799,6 +6879,10 @@
             "target": "Package",
             "version": "[2.2.0, )",
             "autoReferenced": true
+          },
+          "System.IdentityModel.Tokens.Jwt": {
+            "target": "Package",
+            "version": "[5.4.0, )"
           }
         },
         "imports": [

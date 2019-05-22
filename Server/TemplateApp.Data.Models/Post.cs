@@ -9,10 +9,9 @@ namespace TemplateApp.Data.Models
     {
         public string Title { get; set; }
 
-        public string Content { get; set; }
+        public string ImageLink { get; set; }
 
-        public int BlogId { get; set; }
+        public int ClickCounter { get; set; }
 
-        public Blog Blog { get; set; }
     }
 }

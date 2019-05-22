@@ -1,2 +1,3 @@
 export * from './authentication.service';
-export * from './template.service';
+export * from './statistics.service';
+export * from './post.service'

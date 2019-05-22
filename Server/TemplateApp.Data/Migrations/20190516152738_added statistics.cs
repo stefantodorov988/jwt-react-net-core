@@ -4,59 +4,47 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace TemplateApp.Data.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class addedstatistics : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Blogs",
+                name: "IpAdresses",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     CreatedAt = table.Column<DateTime>(nullable: false),
-                    Url = table.Column<string>(nullable: true)
+                    Value = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Blogs", x => x.Id);
+                    table.PrimaryKey("PK_IpAdresses", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
-                name: "Posts",
+                name: "PageStatistics",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     CreatedAt = table.Column<DateTime>(nullable: false),
-                    Title = table.Column<string>(nullable: true),
-                    Content = table.Column<string>(nullable: true),
-                    BlogId = table.Column<int>(nullable: false)
+                    Visits = table.Column<int>(nullable: false),
+                    UniqueVisits = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Posts", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Posts_Blogs_BlogId",
-                        column: x => x.BlogId,
-                        principalTable: "Blogs",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                    table.PrimaryKey("PK_PageStatistics", x => x.Id);
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Posts_BlogId",
-                table: "Posts",
-                column: "BlogId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Posts");
+                name: "IpAdresses");
 
             migrationBuilder.DropTable(
-                name: "Blogs");
+                name: "PageStatistics");
         }
     }
 }

@@ -6,6 +6,7 @@ import { authenticationService } from '@/_services';
 import { PrivateRoute } from '@/_components';
 import { HomePage } from '@/HomePage';
 import { LoginPage } from '@/LoginPage';
+import { AddPostPage } from '@/AddPostPage';
 
 import Api from '../core/api'
 
@@ -21,6 +22,7 @@ class App extends React.Component {
     }
 
     componentDidMount() {
+        
         authenticationService.currentUser.subscribe(x => this.setState({ currentUser: x }));
     }
 
@@ -38,7 +40,7 @@ class App extends React.Component {
                         <nav className="navbar navbar-expand navbar-dark bg-dark">
                             <div className="navbar-nav">
                                 <Link to="/" className="nav-item nav-link">Home</Link>
-                                <Link to="/" className="nav-item nav-link">Contacts</Link>
+                                <Link to="/addpost" className="nav-item nav-link">AddPost</Link>
                                 <a onClick={this.logout} className="nav-item nav-link">Logout</a>
                             </div>
                         </nav>
@@ -48,10 +50,13 @@ class App extends React.Component {
                             <div className="row">
                                 <div className="col-md-6 offset-md-3">
                                     <PrivateRoute exact path="/" component={HomePage} />
+                                    <PrivateRoute exact path="/addpost" component={AddPostPage} />
                                     <Route path="/login" component={LoginPage} />
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div className="row">
                     </div>
                 </div>
             </Router>

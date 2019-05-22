@@ -19,7 +19,7 @@ namespace TemplateApp.Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("TemplateApp.Data.Models.Blog", b =>
+            modelBuilder.Entity("TemplateApp.Data.Models.IpAdress", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -27,11 +27,28 @@ namespace TemplateApp.Data.Migrations
 
                     b.Property<DateTime>("CreatedAt");
 
-                    b.Property<string>("Url");
+                    b.Property<string>("Value");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Blogs");
+                    b.ToTable("IpAdresses");
+                });
+
+            modelBuilder.Entity("TemplateApp.Data.Models.PageStatistics", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CreatedAt");
+
+                    b.Property<int>("UniqueVisits");
+
+                    b.Property<int>("Visits");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("PageStatistics");
                 });
 
             modelBuilder.Entity("TemplateApp.Data.Models.Post", b =>
@@ -40,26 +57,77 @@ namespace TemplateApp.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("BlogId");
-
-                    b.Property<string>("Content");
+                    b.Property<int>("ClickCounter");
 
                     b.Property<DateTime>("CreatedAt");
+
+                    b.Property<string>("ImageLink");
 
                     b.Property<string>("Title");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("BlogId");
-
                     b.ToTable("Posts");
                 });
 
-            modelBuilder.Entity("TemplateApp.Data.Models.Post", b =>
+            modelBuilder.Entity("TemplateApp.Data.Models.UniqueClick", b =>
                 {
-                    b.HasOne("TemplateApp.Data.Models.Blog", "Blog")
-                        .WithMany("Posts")
-                        .HasForeignKey("BlogId")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("ClickCounter");
+
+                    b.Property<DateTime>("CreatedAt");
+
+                    b.Property<int>("IpAdressId");
+
+                    b.Property<int>("PostId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IpAdressId");
+
+                    b.HasIndex("PostId");
+
+                    b.ToTable("UniqueClicks");
+                });
+
+            modelBuilder.Entity("TemplateApp.Data.Models.User", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CreatedAt");
+
+                    b.Property<string>("Email");
+
+                    b.Property<string>("FirstName");
+
+                    b.Property<string>("LastName");
+
+                    b.Property<string>("Password");
+
+                    b.Property<string>("Token");
+
+                    b.Property<string>("Username");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("TemplateApp.Data.Models.UniqueClick", b =>
+                {
+                    b.HasOne("TemplateApp.Data.Models.IpAdress", "IpAdress")
+                        .WithMany()
+                        .HasForeignKey("IpAdressId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("TemplateApp.Data.Models.Post", "Post")
+                        .WithMany()
+                        .HasForeignKey("PostId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618

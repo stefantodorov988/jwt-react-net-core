@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\stefan.t\\Desktop\\TemplateApp\\Server\\TemplateApp.Repositories\\TemplateApp.Repositories.csproj": {}
+    "C:\\Users\\stefan.t\\Desktop\\test\\stefan.t\\Server\\TemplateApp.Repositories\\TemplateApp.Repositories.csproj": {}
   },
   "projects": {
-    "C:\\Users\\stefan.t\\Desktop\\TemplateApp\\Server\\TemplateApp.Data.Models\\TemplateApp.Data.Models.csproj": {
+    "C:\\Users\\stefan.t\\Desktop\\test\\stefan.t\\Server\\TemplateApp.Data.Models\\TemplateApp.Data.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\stefan.t\\Desktop\\TemplateApp\\Server\\TemplateApp.Data.Models\\TemplateApp.Data.Models.csproj",
+        "projectUniqueName": "C:\\Users\\stefan.t\\Desktop\\test\\stefan.t\\Server\\TemplateApp.Data.Models\\TemplateApp.Data.Models.csproj",
         "projectName": "TemplateApp.Data.Models",
-        "projectPath": "C:\\Users\\stefan.t\\Desktop\\TemplateApp\\Server\\TemplateApp.Data.Models\\TemplateApp.Data.Models.csproj",
+        "projectPath": "C:\\Users\\stefan.t\\Desktop\\test\\stefan.t\\Server\\TemplateApp.Data.Models\\TemplateApp.Data.Models.csproj",
         "packagesPath": "C:\\Users\\stefan.t\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\stefan.t\\Desktop\\TemplateApp\\Server\\TemplateApp.Data.Models\\obj\\",
+        "outputPath": "C:\\Users\\stefan.t\\Desktop\\test\\stefan.t\\Server\\TemplateApp.Data.Models\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -56,14 +56,14 @@
         }
       }
     },
-    "C:\\Users\\stefan.t\\Desktop\\TemplateApp\\Server\\TemplateApp.Data\\TemplateApp.Data.csproj": {
+    "C:\\Users\\stefan.t\\Desktop\\test\\stefan.t\\Server\\TemplateApp.Data\\TemplateApp.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\stefan.t\\Desktop\\TemplateApp\\Server\\TemplateApp.Data\\TemplateApp.Data.csproj",
+        "projectUniqueName": "C:\\Users\\stefan.t\\Desktop\\test\\stefan.t\\Server\\TemplateApp.Data\\TemplateApp.Data.csproj",
         "projectName": "TemplateApp.Data",
-        "projectPath": "C:\\Users\\stefan.t\\Desktop\\TemplateApp\\Server\\TemplateApp.Data\\TemplateApp.Data.csproj",
+        "projectPath": "C:\\Users\\stefan.t\\Desktop\\test\\stefan.t\\Server\\TemplateApp.Data\\TemplateApp.Data.csproj",
         "packagesPath": "C:\\Users\\stefan.t\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\stefan.t\\Desktop\\TemplateApp\\Server\\TemplateApp.Data\\obj\\",
+        "outputPath": "C:\\Users\\stefan.t\\Desktop\\test\\stefan.t\\Server\\TemplateApp.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -82,8 +82,8 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "C:\\Users\\stefan.t\\Desktop\\TemplateApp\\Server\\TemplateApp.Data.Models\\TemplateApp.Data.Models.csproj": {
-                "projectPath": "C:\\Users\\stefan.t\\Desktop\\TemplateApp\\Server\\TemplateApp.Data.Models\\TemplateApp.Data.Models.csproj"
+              "C:\\Users\\stefan.t\\Desktop\\test\\stefan.t\\Server\\TemplateApp.Data.Models\\TemplateApp.Data.Models.csproj": {
+                "projectPath": "C:\\Users\\stefan.t\\Desktop\\test\\stefan.t\\Server\\TemplateApp.Data.Models\\TemplateApp.Data.Models.csproj"
               }
             }
           }
@@ -120,14 +120,14 @@
         }
       }
     },
-    "C:\\Users\\stefan.t\\Desktop\\TemplateApp\\Server\\TemplateApp.Repositories\\TemplateApp.Repositories.csproj": {
+    "C:\\Users\\stefan.t\\Desktop\\test\\stefan.t\\Server\\TemplateApp.Repositories\\TemplateApp.Repositories.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\stefan.t\\Desktop\\TemplateApp\\Server\\TemplateApp.Repositories\\TemplateApp.Repositories.csproj",
+        "projectUniqueName": "C:\\Users\\stefan.t\\Desktop\\test\\stefan.t\\Server\\TemplateApp.Repositories\\TemplateApp.Repositories.csproj",
         "projectName": "TemplateApp.Repositories",
-        "projectPath": "C:\\Users\\stefan.t\\Desktop\\TemplateApp\\Server\\TemplateApp.Repositories\\TemplateApp.Repositories.csproj",
+        "projectPath": "C:\\Users\\stefan.t\\Desktop\\test\\stefan.t\\Server\\TemplateApp.Repositories\\TemplateApp.Repositories.csproj",
         "packagesPath": "C:\\Users\\stefan.t\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\stefan.t\\Desktop\\TemplateApp\\Server\\TemplateApp.Repositories\\obj\\",
+        "outputPath": "C:\\Users\\stefan.t\\Desktop\\test\\stefan.t\\Server\\TemplateApp.Repositories\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -146,11 +146,11 @@
         "frameworks": {
           "netcoreapp2.2": {
             "projectReferences": {
-              "C:\\Users\\stefan.t\\Desktop\\TemplateApp\\Server\\TemplateApp.Data.Models\\TemplateApp.Data.Models.csproj": {
-                "projectPath": "C:\\Users\\stefan.t\\Desktop\\TemplateApp\\Server\\TemplateApp.Data.Models\\TemplateApp.Data.Models.csproj"
+              "C:\\Users\\stefan.t\\Desktop\\test\\stefan.t\\Server\\TemplateApp.Data.Models\\TemplateApp.Data.Models.csproj": {
+                "projectPath": "C:\\Users\\stefan.t\\Desktop\\test\\stefan.t\\Server\\TemplateApp.Data.Models\\TemplateApp.Data.Models.csproj"
               },
-              "C:\\Users\\stefan.t\\Desktop\\TemplateApp\\Server\\TemplateApp.Data\\TemplateApp.Data.csproj": {
-                "projectPath": "C:\\Users\\stefan.t\\Desktop\\TemplateApp\\Server\\TemplateApp.Data\\TemplateApp.Data.csproj"
+              "C:\\Users\\stefan.t\\Desktop\\test\\stefan.t\\Server\\TemplateApp.Data\\TemplateApp.Data.csproj": {
+                "projectPath": "C:\\Users\\stefan.t\\Desktop\\test\\stefan.t\\Server\\TemplateApp.Data\\TemplateApp.Data.csproj"
               }
             }
           }

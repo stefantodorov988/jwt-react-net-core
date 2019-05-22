@@ -9,5 +9,6 @@ namespace TemplateApp.Services.Contract
     {
         User Authenticate(string username, string password);
         IEnumerable<User> GetAll();
+        void Register(User user);
     }
 }

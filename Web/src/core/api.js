@@ -13,7 +13,7 @@ export class Api {
     data = data || {};
     headers = headers ? headers : {};
     headers = _.assign({}, this.conf.defaultHeaders, headers);
-    headers.clientId = conf.clientID;
+    
     
     if (localStorage.currentUser)  { // authorizing user 
       headers.Authorization = 'Bearer ' + JSON.parse(localStorage.currentUser).token;

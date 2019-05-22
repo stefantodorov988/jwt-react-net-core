@@ -693,11 +693,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\stefan.t\\Desktop\\TemplateApp\\Server\\TemplateApp.Data.Models\\TemplateApp.Data.Models.csproj",
+      "projectUniqueName": "C:\\Users\\stefan.t\\Desktop\\test\\stefan.t\\Server\\TemplateApp.Data.Models\\TemplateApp.Data.Models.csproj",
       "projectName": "TemplateApp.Data.Models",
-      "projectPath": "C:\\Users\\stefan.t\\Desktop\\TemplateApp\\Server\\TemplateApp.Data.Models\\TemplateApp.Data.Models.csproj",
+      "projectPath": "C:\\Users\\stefan.t\\Desktop\\test\\stefan.t\\Server\\TemplateApp.Data.Models\\TemplateApp.Data.Models.csproj",
       "packagesPath": "C:\\Users\\stefan.t\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\stefan.t\\Desktop\\TemplateApp\\Server\\TemplateApp.Data.Models\\obj\\",
+      "outputPath": "C:\\Users\\stefan.t\\Desktop\\test\\stefan.t\\Server\\TemplateApp.Data.Models\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

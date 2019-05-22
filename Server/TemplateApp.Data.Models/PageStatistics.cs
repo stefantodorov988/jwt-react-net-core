@@ -5,10 +5,9 @@ using TemplateApp.Data.Models.Base;
 
 namespace TemplateApp.Data.Models
 {
-    public class Blog : Entity
+    public class PageStatistics : Entity
     {
-        public string Url { get; set; }
-
-        public ICollection<Post> Posts { get; set; }
+        public int Visits { get; set; }
+        public int UniqueVisits { get; set; }
     }
 }

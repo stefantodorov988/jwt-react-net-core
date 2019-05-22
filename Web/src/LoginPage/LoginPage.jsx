@@ -1,25 +1,34 @@
 import React from 'react';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
+import { Post } from '@/Post';
+import ip from 'ip';
 
-import { authenticationService } from '@/_services';
+import { postService, authenticationService, statisticsService } from '@/_services';
 
 class LoginPage extends React.Component {
     constructor(props) {
         super(props);
 
-        // redirect to home if already logged in
-        if (authenticationService.currentUserValue) { 
-            this.props.history.push('/');
-        }
+        this.state = {
+            posts: null
+        };
+    }
+    
+    handleClick (id){
+        postService.handleClick(id , ip.address());
+    }
+
+    componentDidMount() {
+        postService.getPosts().then(posts => this.setState({ posts }))
+        statisticsService.alertVisit(ip.address())
     }
 
     render() {
         return (
             <div>
                 <h2>Login</h2>
-                <Formik
-                    initialValues={{
+                <Formik initialValues={{
                         username: '',
                         password: ''
                     }}
@@ -61,10 +70,18 @@ class LoginPage extends React.Component {
                             </div>
                             {status &&
                                 <div className={'alert alert-danger'}>{status}</div>
-                            }
-                        </Form>
-                    )}
-                />
+                            } </Form>)}/>
+
+                
+                {this.state.posts &&
+                    this.state.posts.map((post) => (
+                            <Post 
+                              key={post.id} 
+                              post={post} 
+                              handleClick={this.handleClick}
+                            />
+                          ))
+                }
             </div>
         )
     }

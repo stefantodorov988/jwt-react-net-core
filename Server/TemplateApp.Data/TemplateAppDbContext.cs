@@ -9,7 +9,10 @@ namespace TemplateApp.Data
           : base(options)
         { }
 
-        public DbSet<Blog> Blogs { get; set; }
         public DbSet<Post> Posts { get; set; }
+        public DbSet<User> Users{ get; set; }
+        public DbSet<IpAdress> IpAdresses{ get; set; }
+        public DbSet<PageStatistics> PageStatistics{ get; set; }
+        public DbSet<UniqueClick> UniqueClicks{ get; set; }
     }
 }

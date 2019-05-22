@@ -1,6 +1,6 @@
 import React from 'react';
-
-import { templateService, authenticationService } from '@/_services';
+import { Post } from '@/Post';
+import { statisticsService, authenticationService, postService } from '@/_services';
 
 class HomePage extends React.Component {
     constructor(props) {
@@ -8,29 +8,46 @@ class HomePage extends React.Component {
 
         this.state = {
             currentUser: authenticationService.currentUserValue,
-            users: null
+            posts: null,
+            statistics: {},
         };
     }
 
     componentDidMount() {
-        templateService.getValues().then(users => this.setState({ users }));
+        statisticsService.getStatistics().then(statistics => this.setState({ statistics }))
+        postService.getPosts().then(posts => this.setState({ posts }))
+    }
+    handleClick(id){
+
     }
 
     render() {
-        const { currentUser, users } = this.state;
+        const { currentUser, posts, statistics  } = this.state;
         return (
             <div>
-                <h1>Hi {currentUser.firstName}!</h1>
-                <p>You're logged in with React & JWT!!</p>
-                <h3>Users from secure api end point:</h3>
-                {users &&
-                    <ul>
-                        {users.map(user =>
-                            <li key={user.id}>{user.firstName} {user.lastName}</li>
-                        )}
-                    </ul>
-                }
+                <div className="container">
+                    <div className="row">
+                       <div className="col-6">
+                          {statistics.posts &&
+                           statistics.posts.map((post) => (
+                              <Post 
+                                key={post.id} 
+                                post={post} 
+                                shouldShowCounter={true}
+                                handleClick={this.handleClick}
+                            />))}
+                    </div>
+                    <div className="col-6">
+                        <h1>Hi {currentUser.firstName}!</h1>
+                        <h4>Site statistics -</h4>
+                        <h3> Total visits : {statistics.visits}</h3>
+                        <h3> Unique visits : {statistics.uniqueVisits}</h3>
+                        <h3> Total clicks : {statistics.overallClicks}</h3>
+                        <h3> Unique clicks : {statistics.overallUniqueClicks}</h3>
+                    </div>
+                </div>
             </div>
+          </div>
         );
     }
 }
